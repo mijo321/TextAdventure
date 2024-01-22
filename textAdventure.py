@@ -5,19 +5,20 @@ import sys
 pygame.init()
 
 # Set up some constants
+# Set up some constants
 WIDTH, HEIGHT = 1000, 750
 TEXT_HEIGHT = HEIGHT / 2
-IMAGE_BOX_HEIGHT = HEIGHT / 4
-INPUT_BOX_HEIGHT = HEIGHT / 4
+BOX_WIDTH = WIDTH / 2
+BOX_HEIGHT = HEIGHT / 2
+
 
 # Create the window
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 
 # Create the areas
-# Create the areas
 text_area = pygame.Rect(0, 0, WIDTH, TEXT_HEIGHT)
-image_box = pygame.Rect(0, TEXT_HEIGHT, WIDTH, IMAGE_BOX_HEIGHT)
-input_box = pygame.Rect(0, TEXT_HEIGHT + IMAGE_BOX_HEIGHT, WIDTH, INPUT_BOX_HEIGHT)
+image_box = pygame.Rect(0, TEXT_HEIGHT, BOX_WIDTH, BOX_HEIGHT)
+input_box = pygame.Rect(BOX_WIDTH, TEXT_HEIGHT, BOX_WIDTH, BOX_HEIGHT)
 
 """
 text_area = pygame.Rect(0, 0, WIDTH, TEXT_HEIGHT)
@@ -27,7 +28,7 @@ input_box = pygame.Rect(IMAGE_BOX_HEIGHT, TEXT_HEIGHT, INPUT_BOX_HEIGHT, INPUT_B
 
 # Load an image
 image = pygame.image.load('placeholder.png')
-image = pygame.transform.scale(image, (IMAGE_BOX_HEIGHT, IMAGE_BOX_HEIGHT))  # Resize the image
+image = pygame.transform.scale(image, (BOX_WIDTH, BOX_HEIGHT))  # Resize the image
 
 # Create a font object
 font = pygame.font.Font(None, 32)
@@ -49,11 +50,11 @@ while True:
                 if user_input.lower() == 'scream':
                     game_text = 'You scream. The house seems to shake.'
                     image = pygame.image.load('test.png')
-                    image = pygame.transform.scale(image, (IMAGE_BOX_HEIGHT, IMAGE_BOX_HEIGHT))  # Resize the image
+                    image = pygame.transform.scale(image, (BOX_WIDTH, BOX_HEIGHT))  # Resize the image
                 elif user_input.lower() == 'whisper':
                     game_text = 'You whisper. The house is silent.'
                     image = pygame.image.load('placeholder.png')
-                    image = pygame.transform.scale(image, (IMAGE_BOX_HEIGHT, IMAGE_BOX_HEIGHT))  # Resize the image
+                    image = pygame.transform.scale(image, (BOX_WIDTH, BOX_HEIGHT))  # Resize the image
                 user_input = ''
             else:
                 user_input += event.unicode
