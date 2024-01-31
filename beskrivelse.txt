@@ -1,0 +1,8 @@
+Description: You search the bås where Sondre’s body was found. You look around and see a small table, a couple of chairs, a bookshelf, and a chess board. You examine each item and see if you can find any clues.
+You: This is the bås where Sondre was killed. Maybe I can find some clues here. Let’s see what we have.
+
+The table: You look at the table and see a rope, a pair of scissors, and a note. The rope is the murder weapon, obviously. The scissors are probably what the killer used to cut the rope. The note is a handwritten message that says: “I’m sorry, Sondre. I had to do it. You left me no choice. Forgive me.” You wonder who wrote it and why.
+The chairs: You look at the chairs and see nothing unusual. They are just ordinary chairs. You sit on one of them and feel a slight discomfort. You get up and see a small stain on the seat. You touch it and realize it’s blood. You wonder whose blood it is and how it got there.
+The bookshelf: You look at the bookshelf and see a collection of books. They are mostly about IT, programming, and chess. You browse through them and see if you can find anything interesting. You notice that one of the books has a bookmark in it. You open it and see that it’s a chess manual. You look at the page and see a diagram of a chess position. You recognize it as the same position that was on the chess board. You wonder if it has any significance.
+The chess board: You look at the chess board and see a game in progress. You study the position and see that it’s a complex and tense one. You try to figure out who was playing and who was winning. You notice that one of the pieces is missing. You wonder where it is and what it means.
+

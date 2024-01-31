@@ -1,0 +1,23 @@
+You: Hi, I’m Detective [Your name]. I’m here to investigate the murder of Sondre Stai.
+
+Officer: Nice to meet you, Detective. I’m Officer Larsen. I’ll brief you on the situation.
+
+You: Go ahead, Larsen. What do we have here?
+
+Officer: Well, as you can see, we have a dead body in one of the båsene. The victim is Sondre Stai, a teacher at this university. He was strangled with a rope, probably sometime yesterday evening. His body was found this morning by some students who came to study.
+
+You: I see. Any suspects or witnesses?
+
+Officer: Not yet, Detective. We’re still questioning the staff and the students. But we have some leads. There are three people who might have a motive or a connection to the victim. They are Jens, another teacher, Daniil, a student, and Hightower, the mental health teacher.
+
+You: Interesting. I’ll need to talk to them and see what they have to say. Where can I find them?
+
+Officer: Well, Jens is probably in his classroom, teaching IT. Daniil is probably in the cafeteria, eating his protein bars. And Hightower is probably in his office, counseling students.
+
+You: Alright, thanks for the info, Larsen. I’ll check them out. Anything else I should know?
+
+Officer: Well, there’s one more thing, Detective. The victim was a chess enthusiast. He had a chess board in his bås, where he played with his students and colleagues. Maybe that has something to do with the murder.
+
+You: Hmm, maybe. I’ll keep that in mind. Thanks, Larsen. I’ll let you know if I find anything.
+
+Officer: No problem, Detective. Good luck with your investigation.

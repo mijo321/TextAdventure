@@ -1,0 +1,24 @@
+Dialogue: You choose to visit Jens, the IT teacher. You find him in his classroom, teaching a group of students. You interrupt his lesson and ask him to come with you. He agrees, but looks annoyed.
+You: Excuse me, are you Jens, the IT teacher?
+
+Jens: Yes, I am. Who are you and what do you want?
+
+You: I’m Detective [Your name]. I’m here to ask you some questions about the murder of Sondre Stai.
+
+Jens: Sondre? Oh, yes, I heard about that. Terrible, terrible. What do you want to know?
+
+You: Well, for starters, where were you yesterday evening, when the murder happened?
+
+Jens: I was here, in my classroom, working on some projects. You can ask my students, they can confirm that.
+
+You: I see. And how well did you know Sondre? What was your relationship with him?
+
+Jens: Well, we were colleagues, of course. We taught IT together. We also played chess sometimes, in his bås. He was a good player, I must admit. Better than me, anyway.
+
+You: Really? How did you feel about that? Did you ever get angry or frustrated with him?
+
+Jens: What? No, of course not. Why would I? It was just a game, after all. A friendly game. Nothing more, nothing less.
+
+You: Hmm, I see. Well, thank you for your time, Jens. You can go back to your class now. But don’t leave the school, I might need to talk to you again.
+
+Jens: Sure, sure. No problem, Detective. Anything to help. Goodbye.

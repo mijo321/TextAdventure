@@ -1,0 +1,142 @@
+# Create a flag to control the typing effect
+typing = False
+    with open('dialouge.txt', 'r') as f:
+
+conversation = [line.strip() for line in f]
+
+
+
+
+
+
+
+import pygame
+import sys
+import os
+import time
+import threading
+
+# Initialize Pygame
+pygame.init()
+
+# Set up some constants
+WIDTH, HEIGHT = 1000, 750
+TEXT_HEIGHT = HEIGHT / 2
+BOX_WIDTH = WIDTH / 2
+BOX_HEIGHT = HEIGHT / 2
+MAX_LENGTH = 85
+# Create the window
+window = pygame.display.set_mode((WIDTH, HEIGHT))
+
+# Create the areas
+text_area = pygame.Rect(0, 0, WIDTH, TEXT_HEIGHT)
+image_box = pygame.Rect(0, TEXT_HEIGHT, BOX_WIDTH, BOX_HEIGHT)
+input_box = pygame.Rect(BOX_WIDTH, TEXT_HEIGHT, BOX_WIDTH, BOX_HEIGHT)
+
+# Load an image
+image = pygame.image.load('placeholder.png')
+image = pygame.transform.scale(image, (BOX_WIDTH, BOX_HEIGHT))  # Resize the image
+
+# Create a font object
+font = pygame.font.Font(None, 32)
+
+# Create a variable to store the user's input
+user_input = ''
+
+# Create a variable to store the game's text
+game_text = ''
+
+area = 'start'
+
+# Define a new event type for the typing effect
+TYPING_EVENT = pygame.USEREVENT + 1
+
+def start_typing(text, delay=0.05):
+    pygame.time.set_timer(TYPING_EVENT, int(delay*1000), True)  # delay is in milliseconds
+    return iter(text)  # Return an iterator over the text
+
+# Create a variable to store the iterator over the game's text
+text_iterator = start_typing(game_text)
+
+def split_text(text, max_length):
+    words = text.split(' ')
+    lines = []
+    current_line = ''
+    for word in words:
+        if len(current_line + word) <= max_length:
+            current_line += word + ' '
+        else:
+            lines.append(current_line)
+            current_line = word + ' '
+    lines.append(current_line)
+    return lines
+
+
+
+
+def intro():
+    global game_text, text_iterator
+    game_text = ''
+    text_iterator = start_typing('You arrive at the school and see a crowd of people and police cars outside. You flash your badge and make your way to the crime scene. A police officer greets you and tells you the basics of the case.')
+
+
+# Define a delay for the typing effect
+delay = 0.05
+# Game loop
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                if area == 'start':
+                    game_text = 'Velkommen til mitt kule spill'
+                    area = 'intro'
+                elif area == 'intro':
+                    if user_input.lower() == 'scream':
+                        game_text = 'You scream. The house seems to shake.'
+                        image = pygame.image.load('test.png')
+                        image = pygame.transform.scale(image, (BOX_WIDTH, BOX_HEIGHT))  # Resize the image
+                    elif user_input.lower() == 'whisper':
+                        intro()
+                elif area == 'oransj':
+                    pass
+                
+                user_input = ''
+            else:
+                user_input += event.unicode
+
+        elif event.type == TYPING_EVENT:
+            try:
+                next_char = next(text_iterator)
+                game_text += next_char
+                pygame.time.set_timer(TYPING_EVENT, int(delay*1000), True)  # Set a timer for the next character
+            except StopIteration:
+                pass  # The text has been fully typed
+
+    # Fill everything with white
+    window.fill((255, 255, 255))
+
+    # Draw the areas
+    pygame.draw.rect(window, (200, 200, 200), text_area)  # Grey
+    pygame.draw.rect(window, (0, 200, 200), image_box)  # Grey
+    pygame.draw.rect(window, (200, 200, 0), input_box)  # Grey
+
+    # Split the game's text into lines
+    lines = split_text(game_text, MAX_LENGTH)
+
+    # Render each line
+    for i, line in enumerate(lines):
+        text_surface = font.render(line, True, (0, 0, 0))
+        window.blit(text_surface, (10, 10 + i*font.get_height()))
+
+    # Render the image
+    window.blit(image, (0, TEXT_HEIGHT))
+
+    # Render the user's input
+    input_surface = font.render(user_input, True, (0, 0, 0))
+    window.blit(input_surface, (WIDTH / 2, TEXT_HEIGHT ))
+
+    # Update the display
+    pygame.display.update()
